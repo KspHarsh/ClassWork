@@ -18,10 +18,18 @@ int fibonacci(int n) {
 int main() {
   int n;
   printf("Enter the number of terms: ");
-  scanf("%d", &n);
+  
+  // Check if input is provided
+  if (scanf("%d", &n) != 1) {
+    // If no input or invalid input, use a default value
+    n = 10;
+    printf("No valid input received. Using default value of %d\n", n);
+  }
+  
   printf("Fibonacci Series: ");
   for (int i = 0; i < n; i++) {
     printf("%d ", fibonacci(i));
   }
+  printf("\n");
   return 0;
 }
